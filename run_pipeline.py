@@ -6,9 +6,18 @@ import sys
 
 import pandas as pd
 
-SCRIPT_DIR = Path(__file__).resolve().parent if "__file__" in globals() else Path.cwd()
-if str(SCRIPT_DIR) not in sys.path:
-    sys.path.insert(0, str(SCRIPT_DIR))
+script_dir_candidates = []
+if "__file__" in globals():
+    script_dir_candidates.append(Path(__file__).resolve().parent)
+script_dir_candidates.extend(
+    [
+        Path("/content/Bridgestone-FCL"),
+        Path.cwd(),
+    ]
+)
+for candidate in script_dir_candidates:
+    if candidate.exists() and str(candidate) not in sys.path:
+        sys.path.insert(0, str(candidate))
 
 from convert_extracted_to_layout import write_layout_xlsx
 from extract_to_df import (
