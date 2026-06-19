@@ -2,8 +2,13 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import sys
 
 import pandas as pd
+
+SCRIPT_DIR = Path(__file__).resolve().parent if "__file__" in globals() else Path.cwd()
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
 
 from convert_extracted_to_layout import write_layout_xlsx
 from extract_to_df import (
