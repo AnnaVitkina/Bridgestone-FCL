@@ -30,8 +30,7 @@ from extract_to_df import (
 
 DEFAULT_CODE_ROOT = Path("/content/Bridgestone-FCL")
 DEFAULT_DATA_ROOT = Path(
-    "/content/drive/Shareddrives/FA Ops Europe: Rate Maintenance Team/"
-    "Documents/AI Adoption RMT/RMT_Bridgestone/FCL"
+    "/content/drive/Shareddrives/FA Ops Europe: Rate Maintenance Team /Documents/AI Adoption RMT/RMT_Bridgestone/FCL"
 )
 DEFAULT_INPUT_DIR = DEFAULT_DATA_ROOT / "input"
 DEFAULT_PROCESSING_DIR = DEFAULT_DATA_ROOT / "processing"
