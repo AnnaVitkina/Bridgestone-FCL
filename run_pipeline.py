@@ -108,7 +108,8 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Override output directory.",
     )
-    return parser.parse_args()
+    args, _unknown = parser.parse_known_args()
+    return args
 
 
 if __name__ == "__main__":
